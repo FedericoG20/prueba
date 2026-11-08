@@ -32,7 +32,7 @@ puntos_maquina = 0
 
 nombre = input("¿Cual es tu nombre? ")
 
-for i in range(3):
+for i in range(3):   # -------- BUCLE DE HASTA 3 RONDAS
     print()
 
     print("----- JUEGO: PIEDRA, PAPEL O TIJERA -----")
@@ -46,7 +46,7 @@ for i in range(3):
 
     print()
 
-    jugada_usuario = input(" ---> ").lower().strip()
+    jugada_usuario = input(" ---> ").lower().strip() # ----------- JUGADA DEL USUARIO
     
     print()
 
@@ -61,7 +61,7 @@ for i in range(3):
 
     print()
 
-    jugada_maquina = random.choice(["piedra", "papel", "tijera"])
+    jugada_maquina = random.choice(["piedra", "papel", "tijera"]) # ----------- JUGADA DE LA MAQUINA
 
     print(f"{nombre} = {jugada_usuario} ---- Maquina = {jugada_maquina}")
 
@@ -69,7 +69,7 @@ for i in range(3):
 
     resultado = reglas(jugada_usuario, jugada_maquina)
 
-    if resultado == "usuario":
+    if resultado == "usuario":   # --------- ACUMULACION DE PUNTOS SEGUND EL RETURN QUE APARESCA
         puntos_usuario += 1
     elif resultado == "maquina":
         puntos_maquina += 1
@@ -85,7 +85,7 @@ print(f"{nombre} = {puntos_usuario}, Maquina = {puntos_maquina}")
 print()
 
 
-if puntos_maquina < puntos_usuario:
+if puntos_maquina < puntos_usuario:  # ----------- IF PARA DEFINIR EL GANADOR 
   print(f"GANADOR = {nombre}")
 elif puntos_maquina > puntos_usuario:
   print("GANADOR MAQUINA")
